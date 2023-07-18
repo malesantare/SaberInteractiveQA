@@ -1,0 +1,15 @@
+def calc_expr(expression):
+    try:
+        return eval(expression)
+    except ZeroDivisionError:
+        return "Ошибка, деление на 0!"
+    except Exception:
+        return "Ошибка, неправильно составленное математическое выражение"
+
+
+# Тестовые выражения
+expressions = ["2+2*5", "5*5+(5-5)", "10/0", "abc", "-5", "-5*(-5)+(-25)"]
+for expression in expressions:
+    print(f"Expression: {expression}")
+    print(f"Result: {calc_expr(expression)}")
+    print("--------------------")
